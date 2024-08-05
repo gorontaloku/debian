@@ -20,9 +20,8 @@ clear
 echo ""
 echo "Ini Adalah Script Install Debian Di Termux"
 echo "Hati-Hati Dalam Penggunaan Script Ini"
-echo " Developer  : Wahyu Pratama Purba "
-echo " My Number  : 082282719563 "
-echo " My YouTube : Wahyu_Prb "
+echo " Developer  : bestmomen "
+echo " My Number  : 082311123196 "
 echo ""
 read -r -p "Please enter username for debian installation: " username </dev/tty
 
@@ -107,7 +106,7 @@ clear -x
 echo ""
 echo "Instalasi Telah Selesai!"
 echo "Jangan Pernah Mencoba Untuk Instalasi Mandiri Tanpa Pengawasan Saya"
-echo "WAHYU PRATAMA PURBA"
+echo "BEST MOMEN"
 echo ""
 
 rm xfce.sh
