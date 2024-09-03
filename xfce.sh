@@ -64,9 +64,6 @@ rm Meslo.zip
 rm LICENSE.txt
 rm readme.md
 
-wget https://github.com/gorontaloku/debian/raw/main/NotoColorEmoji-Regular.ttf
-mv NotoColorEmoji-Regular.ttf .fonts
-
 wget https://github.com/gorontaloku/debian/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
