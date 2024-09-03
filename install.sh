@@ -44,7 +44,7 @@ correct_password="12345"
 
 # Function to prompt for password
 prompt_for_password() {
-    echo "Enter the password:"
+    echo "Enter the username:"
     read -s entered_password  # Read password input silently
 }
 
