@@ -20,8 +20,9 @@ clear
 echo ""
 echo "Ini Adalah Script Install Debian Di Termux"
 echo "Hati-Hati Dalam Penggunaan Script Ini"
-echo " Developer  : bestmomen "
+echo " Developer  : Bestmomen "
 echo " My Number  : 082311123196 "
+echo " My YouTube :  "
 echo ""
 read -r -p "Please enter username for debian installation: " username </dev/tty
 
@@ -72,9 +73,9 @@ mkdir -p Desktop
 mkdir -p Downloads
 
 #Download required install scripts
-wget https://github.com/gorontaloku/debian/raw/main/xfce.sh
-wget https://github.com/gorontaloku/debian/raw/main/proot.sh
-wget https://github.com/gorontaloku/debian/raw/main/utils.sh
+wget https://github.com/wahyu22010/Debian/raw/main/xfce.sh
+wget https://github.com/wahyu22010/Debian/raw/main/proot.sh
+wget https://github.com/wahyu22010/Debian/raw/main/utils.sh
 chmod +x *.sh
 
 ./xfce.sh "$username"
@@ -91,9 +92,9 @@ echo "Downloading Termux-X11"
 # Wait for a single character input 
 echo ""
 read -n 1 -s -r -p "Silahkan Tekan Enter Untuk Melanjutkan Proses BerikutNya..."
-wget https://github.com/termux/termux-x11/releases/download/nightly/app-universal-debug.apk
-mv app-universal-debug.apk $HOME/storage/downloads/
-#termux-open $HOME/storage/downloads/app-universal-debug.apk
+wget https://github.com/termux/termux-x11/releases/download/nightly/app-arm64-v8a-debug.apk
+mv app-arm64-v8a-debug.apk $HOME/storage/downloads/
+#termux-open $HOME/storage/downloads/app-arm64-v8a-debug.apk
 
 source $PREFIX/etc/bash.bashrc
 termux-reload-settings
@@ -106,11 +107,12 @@ clear -x
 echo ""
 echo "Instalasi Telah Selesai!"
 echo "Jangan Pernah Mencoba Untuk Instalasi Mandiri Tanpa Pengawasan Saya"
-echo "BEST MOMEN"
+echo "BESTMOMEN"
 echo ""
 
 rm xfce.sh
 rm proot.sh
 rm utils.sh
 rm install.sh
+
 
