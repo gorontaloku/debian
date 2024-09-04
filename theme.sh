@@ -37,6 +37,47 @@ rm Meslo.zip
 rm LICENSE.txt
 rm readme.md
 
+wget https://github.com/gorontaloku/Asset-linux/raw/main/font-windows1.zip
+unzip font-windows1.zip
+mv font-windows1*.ttf .fonts/
+mv font-windows1*.otf .fonts/
+rm font-windows1.zip
+
+wget https://github.com/gorontaloku/Asset-linux/raw/main/font-windows2.zip
+unzip font-windows2.zip
+mv font-windows2*.ttf .fonts/
+mv font-windows2*.otf .fonts/
+rm font-windows2.zip
+
+wget https://github.com/gorontaloku/Asset-linux/raw/main/font-windows3.zip
+unzip font-windows3.zip
+mv font-windows3*.ttf .fonts/
+mv font-windows3*.otf .fonts/
+rm font-windows3.zip
+
+wget https://github.com/gorontaloku/Asset-linux/raw/main/font-windows4.zip
+unzip font-windows4.zip
+mv font-windows4*.ttf .fonts/
+mv font-windows4*.otf .fonts/
+rm font-windows4.zip
+
+wget https://github.com/gorontaloku/Asset-linux/raw/main/font-windows5.zip
+unzip font-windows5.zip
+mv font-windows5*.ttf .fonts/
+rm font-windows5.zip
+
+wget https://github.com/gorontaloku/Asset-linux/raw/main/font-windows6.zip
+unzip font-windows6.zip
+mv font-windows6*.ttf .fonts/
+mv font-windows6*.otf .fonts/
+rm font-windows6.zip
+
+wget https://github.com/gorontaloku/Asset-linux/raw/main/font-windows7.zip
+unzip font-windows7.zip
+mv font-windows7*.ttf .fonts/
+mv font-windows7*.otf .fonts/
+rm font-windows7.zip
+
 wget https://github.com/wahyu22010/Debian/raw/main/NotoColorEmoji-Regular.ttf
 mv NotoColorEmoji-Regular.ttf .fonts
 
