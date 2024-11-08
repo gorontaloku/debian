@@ -11,6 +11,10 @@ pkg install "${pkgs[@]}" -y -o Dpkg::Options::="--force-confold"
 cp $PREFIX/share/applications/firefox.desktop $HOME/Desktop 
 chmod +x $HOME/Desktop/firefox.desktop
 
+#Put WPS Icon on Dekstop
+cp $PREFIX/share/applications/wps-office-wps.desktop $HOME/Desktop 
+chmod +x $HOME/Desktop/wps-office-wps.desktop
+
 #Set aliases
 echo "
 alias debian='proot-distro login debian --user $username --shared-tmp'
