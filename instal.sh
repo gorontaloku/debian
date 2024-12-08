@@ -100,6 +100,9 @@ termux-reload-settings
 wget https://wpsoffice.wahyupratama-purba2004.workers.dev/0:/wpsoffice.deb
 mv wpsoffice.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
 
+debian
+sudo apt install code-oos
+
 clear -x
 echo ""
 echo "Instalasi Telah Selesai!"
