@@ -40,7 +40,7 @@ read -n 1 -s -r -p "Press any key to continue..."
 termux-setup-storage
 
 # Set the correct password here
-correct_password="as"
+correct_password="25"
 
 # Function to prompt for password
 prompt_for_password() {
@@ -99,6 +99,10 @@ termux-reload-settings
 #Downloads File wpsoffice
 Wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/wps-office_11.1.0.11720_arm64.deb
 mv wps-office_11.1.0.11720_arm64.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
+
+#Download File Github Desktop
+wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GitHubDesktop-linux-arm64-3.2.1-linux2.deb
+mv GitHubDesktop-linux-arm64-3.2.1-linux2.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
 
 #debian
 #sudo apt install code-oos
