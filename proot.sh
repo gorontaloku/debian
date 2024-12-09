@@ -88,4 +88,4 @@ pd login debian --shared-tmp -- env DISPLAY=:1.0 sudo apt install -y ./mesa-vulk
 pd login debian --shared-tmp -- env DISPLAY=:1.0 sudo apt install gdebi libreoffice -y
 pd login debian --shared-tmp -- env DISPLAY=:1.0 Wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/wps-office_11.1.0.11720_arm64.deb
 pd login debian --shared-tmp -- env DISPLAY=:1.0 sudo -S apt install ./wps-office_11.1.0.11720_arm64.deb -y
-pd login debian --shared-tmp -- env DISPLAY=:1.0 rm -rf wpsoffice.deb
+pd login debian --shared-tmp -- env DISPLAY=:1.0 rm -rf wps-office_11.1.0.11720_arm64.deb
