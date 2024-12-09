@@ -97,7 +97,7 @@ source $PREFIX/etc/bash.bashrc
 termux-reload-settings
 
 #Downloads File wpsoffice
-Wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/wps-office_11.1.0.11720_arm64.deb
+wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/wps-office_11.1.0.11720_arm64.deb
 mv wps-office_11.1.0.11720_arm64.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
 
 #Download File Github Desktop
