@@ -96,10 +96,6 @@ mv app-arm64-v8a-debug.apk $HOME/storage/downloads/
 source $PREFIX/etc/bash.bashrc
 termux-reload-settings
 
-#Downloads File wpsoffice
-wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/wps-office_11.1.0.11720_arm64.deb
-mv wps-office_11.1.0.11720_arm64.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
-
 #Download File Github Desktop
 wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GitHubDesktop-linux-arm64-3.2.1-linux2.deb
 mv GitHubDesktop-linux-arm64-3.2.1-linux2.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
@@ -115,7 +111,7 @@ echo "BESTMOMEN"
 echo ""
 
 rm xfce.sh
-rm root.sh
+rm proot.sh
 rm utils.sh
 rm instal.sh
 
