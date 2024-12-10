@@ -67,7 +67,7 @@ rm readme.md
 wget https://github.com/gorontaloku/debian/raw/main/NotoColorEmoji-Regular.ttf
 mv NotoColorEmoji-Regular.ttf .fonts
 
-wget https://github.com/wahyu22010/Debian/raw/main/font.ttf
+wget https://github.com/gorontaloku/debian/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
 #Setup Fancybash Termux
