@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/gorontaloku/debian/main/excel-icon.png
 wget https://raw.githubusercontent.com/gorontaloku/debian/main/powerpoint-icon.png
 mv word-icon.png $PREFIX/share/icons/
 mv excel-icon.png $PREFIX/share/icons/
-mv powerpoint-icon.png $PREFIX/icons/
+mv powerpoint-icon.png $PREFIX/share/icons/
 
 #WORD
 if [ ! -f $PREFIX/share/applications/wps-office-wps.desktop ];then
