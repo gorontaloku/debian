@@ -27,7 +27,7 @@ read -r -p "Please enter username for debian installation: " username </dev/tty
 
 termux-change-repo
 pkg update -y -o Dpkg::Options::="--force-confold"
-pkg upgrade -y -o Dpkg::Options::="--force-confold"
+#pkg upgrade -y -o Dpkg::Options::="--force-confold"
 sed -i '12s/^#//' $HOME/.termux/termux.properties
 
 # Display a message 
@@ -64,7 +64,7 @@ clear
 
 pkgs=( 'wget' 'ncurses-utils' 'dbus' 'proot-distro' 'x11-repo' 'tur-repo' 'android-tools' 'pulseaudio')
 pkg uninstall dbus -y
-pkg update
+#pkg update
 pkg install "${pkgs[@]}" -y -o Dpkg::Options::="--force-confold"
 
 #Create default directories
