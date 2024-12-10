@@ -81,8 +81,8 @@ mkdir $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fonts
 cp .fonts/NotoColorEmoji-Regular.ttf $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fonts/ 
 
 #Setup Hardware Acceleration
-#pd login debian --shared-tmp -- env DISPLAY=:1.0 wget https://github.com/gorontaloku/debian/raw/main/mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
-#pd login debian --shared-tmp -- env DISPLAY=:1.0 sudo apt install -y ./mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
+pd login debian --shared-tmp -- env DISPLAY=:1.0 wget https://github.com/gorontaloku/debian/raw/main/mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
+pd login debian --shared-tmp -- env DISPLAY=:1.0 sudo apt install -y ./mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
 
 #Setup Wpsoffice dan Libreoffice
 pd login debian --shared-tmp -- env DISPLAY=:1.0 sudo apt install gdebi libreoffice -y
