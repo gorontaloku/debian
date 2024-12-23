@@ -97,8 +97,8 @@ source $PREFIX/etc/bash.bashrc
 termux-reload-settings
 
 #Download File Github Desktop
-wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GitHubDesktop-linux-arm64-3.2.1-linux2.deb
-mv GitHubDesktop-linux-arm64-3.2.1-linux2.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
+#wget https://github.com/Pi-Apps-Coders/files/releases/download/large-files/GitHubDesktop-linux-arm64-3.2.1-linux2.deb
+#mv GitHubDesktop-linux-arm64-3.2.1-linux2.deb $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
 
 #debian
 #sudo apt install code-oos
