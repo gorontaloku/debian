@@ -59,3 +59,9 @@ StartupNotify=true" > $PREFIX/share/applications/wps-office-wpp.desktop
 
 cp $PREFIX/share/applications/wps-office-et.desktop $HOME/Desktop 
 chmod +x $HOME/Desktop/wps-office-et.desktop
+
+cp $PREFIX/share/applications/wps-office-wpp.desktop $HOME/Desktop 
+chmod +x $HOME/Desktop/wps-office-wpp.desktop
+
+cp $PREFIX/share/applications/wps-office-wps.desktop $HOME/Desktop 
+chmod +x $HOME/Desktop/wps-office-wps.desktop
