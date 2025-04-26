@@ -16,7 +16,7 @@ fi
 echo "[Desktop Entry]
 Name=Microsoft Office Word       
 Comment=Configure wps office or create an App
-Exec=pd login debian --user username --shared-tmp -- env DISPLAY=:1.0 /usr/bin/wps %U
+Exec=pd login debian --user hankook --shared-tmp -- env DISPLAY=:1.0 /usr/bin/wps %U
 Icon=$PREFIX/share/icons/word-icon.png
 Terminal=false
 StartupWMClass=wps-office-et   
@@ -31,7 +31,7 @@ fi
 echo "[Desktop Entry]
 Name=Microsoft Office Excel       
 Comment=Configure wps office or create an App
-Exec=pd login debian --user $1 --shared-tmp -- env DISPLAY=:1.0 /usr/bin/et %F
+Exec=pd login debian --user hankook --shared-tmp -- env DISPLAY=:1.0 /usr/bin/et %F
 Icon=$PREFIX/share/icons/excel-icon.png
 Terminal=false
 StartupWMClass=wps-office-et   
@@ -46,10 +46,16 @@ fi
 echo "[Desktop Entry]
 Name=Microsoft Office Powerpoint       
 Comment=Configure wps office or create an App
-Exec=pd login debian --user $username --shared-tmp -- env DISPLAY=:1.0 /usr/bin/wpp %F
+Exec=pd login debian --user hankook --shared-tmp -- env DISPLAY=:1.0 /usr/bin/wpp %F
 Icon=$PREFIX/share/icons/powerpoint-icon.png
 Terminal=false
 StartupWMClass=wps-office-wpp   
 Type=Application
 Categories=Office;                                                    
 StartupNotify=true" > $PREFIX/share/applications/wps-office-wpp.desktop
+
+
+
+
+cp $PREFIX/share/applications/wps-office-et .desktop $HOME/Desktop 
+chmod +x $HOME/Desktop/wps-office-et .desktop
