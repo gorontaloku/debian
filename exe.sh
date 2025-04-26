@@ -31,7 +31,7 @@ fi
 echo "[Desktop Entry]
 Name=Microsoft Office Excel       
 Comment=Configure wps office or create an App
-Exec=pd login debian --user $username --shared-tmp -- env DISPLAY=:1.0 /usr/bin/et %F
+Exec=pd login debian --user $1 --shared-tmp -- env DISPLAY=:1.0 /usr/bin/et %F
 Icon=$PREFIX/share/icons/excel-icon.png
 Terminal=false
 StartupWMClass=wps-office-et   
