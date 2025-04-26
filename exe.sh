@@ -16,7 +16,7 @@ fi
 echo "[Desktop Entry]
 Name=Microsoft Office Word       
 Comment=Configure wps office or create an App
-Exec=pd login debian --user $username --shared-tmp -- env DISPLAY=:1.0 /usr/bin/wps %U
+Exec=pd login debian --user username --shared-tmp -- env DISPLAY=:1.0 /usr/bin/wps %U
 Icon=$PREFIX/share/icons/word-icon.png
 Terminal=false
 StartupWMClass=wps-office-et   
