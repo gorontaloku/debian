@@ -84,11 +84,11 @@ wget https://github.com/gorontaloku/debian/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
 #Setup Fancybash Termux
-#wget https://raw.githubusercontent.com/gorontaloku/debian/main/fancybash.sh
-#mv fancybash.sh .fancybash.sh
-#echo "source $HOME/.fancybash.sh" >> $PREFIX/etc/bash.bashrc
-#sed -i "326s/\\\u/$username/" $HOME/.fancybash.sh
-#sed -i "327s/\\\h/termux/" $HOME/.fancybash.sh
+wget https://github.com/gorontaloku/debian/raw/main/fancybash.sh
+mv fancybash.sh .fancybash.sh
+echo "source $HOME/.fancybash.sh" >> $PREFIX/etc/bash.bashrc
+sed -i "326s/\\\u/$username/" $HOME/.fancybash.sh
+sed -i "327s/\\\h/termux/" $HOME/.fancybash.sh
 
 #Autostart Conky
 wget https://github.com/gorontaloku/debian/raw/main/config.tar.gz
