@@ -59,6 +59,9 @@ mv WhiteSur-cursors $PREFIX/share/icons/
 rm -rf $HOME//whitesur*
 
 #Setup Icons Menu
+wget https://github.com/gorontaloku/debian/raw/refs/heads/main/iconwin.zip
+unzip iconwin.zip
+cd iconwin
 cp start-here.svg $PREFIX/share/icons/Papirus/24x24/panel/
 cp start-here.svg $PREFIX/share/icons/Papirus/22x22/panel/
 cp start-here.svg $PREFIX/share/icons/Papirus/16x16/panel/
@@ -70,6 +73,8 @@ cp preferences-system-search.svg $PREFIX/share/icons/Papirus/64x64/apps/
 cp preferences-system-search.svg $PREFIX/share/icons/Papirus/16x16/apps/
 cp preferences-system-search.svg $PREFIX/share/icons/Papirus/22x22/apps/
 cp preferences-system-search.svg $PREFIX/share/icons/Papirus/24x24/apps/
+
+rm -rf $HOME//iconwin
 
 #Setup Fonts
 wget https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip
