@@ -49,6 +49,15 @@ mv Fluent-icon-theme-2023-02-01/cursors/dist-dark $PREFIX/share/icons/
 rm -rf $HOME//Fluent*
 rm 2023-02-01.zip
 
+wget https://github.com/gorontaloku/debian/raw/refs/heads/main/whitesur-cursors.zip
+unzip whitesur-cursors.zip
+cd whitesur-cursors
+./install.sh
+cd ..
+cd .local/share/icons
+mv WhiteSur-cursors $PREFIX/share/icons/
+rm -rf $HOME//whitesur*
+
 #Setup Fonts
 wget https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip
 mkdir .fonts 
