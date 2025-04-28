@@ -75,11 +75,13 @@ mkdir -p Downloads
 wget https://github.com/gorontaloku/debian/raw/main/xfce.sh
 wget https://github.com/gorontaloku/debian/raw/main/proot.sh
 wget https://github.com/gorontaloku/debian/raw/main/utils.sh
+wget https://github.com/gorontaloku/debian/raw/main/exe.sh
 chmod +x *.sh
 
 ./xfce.sh "$username"
 ./proot.sh "$username"
 ./utils.sh
+./exe.sh "$username"
 
 
 
@@ -114,5 +116,6 @@ rm xfce.sh
 rm proot.sh
 rm utils.sh
 rm instal.sh
+rm exe.sh
 rm .bash_history
 
