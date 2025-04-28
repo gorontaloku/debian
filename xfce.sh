@@ -33,6 +33,9 @@ wget https://raw.githubusercontent.com/gorontaloku/debian/main/dark_waves.png
 mv peakpx.jpg $PREFIX/share/backgrounds/xfce/
 mv dark_waves.png $PREFIX/share/backgrounds/xfce/
 
+wget https://github.com/gorontaloku/debian/raw/refs/heads/main/xfce-x.svg
+mv xfce-x.svg $PREFIX/share/background/xfce/
+
 #Install WhiteSur-Dark Theme
 wget https://github.com/vinceliuice/WhiteSur-gtk-theme/archive/refs/tags/2023-04-26.zip
 unzip 2023-04-26.zip
