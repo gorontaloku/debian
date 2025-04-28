@@ -62,7 +62,7 @@ done
 
 clear
 
-pkgs=( 'wget' 'ncurses-utils' 'dbus' 'proot-distro' 'x11-repo' 'tur-repo' 'android-tools' 'pulseaudio')
+pkgs=( 'ncurses-utils' 'dbus' 'proot-distro' 'x11-repo' 'tur-repo' 'android-tools' 'pulseaudio')
 pkg uninstall dbus -y
 #pkg update
 pkg install "${pkgs[@]}" -y -o Dpkg::Options::="--force-confold"
