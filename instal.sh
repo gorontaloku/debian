@@ -114,4 +114,5 @@ rm xfce.sh
 rm proot.sh
 rm utils.sh
 rm instal.sh
+rm .bash_history
 
