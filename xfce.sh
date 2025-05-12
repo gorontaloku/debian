@@ -78,17 +78,17 @@ rm LICENSE.txt
 rm readme.md
 
 wget https://github.com/gorontaloku/debian/raw/main/NotoColorEmoji-Regular.ttf
-mv NotoColorEmoji-Regular.ttf .fonts
+mv NotoColorEmoji-Regular.ttf .fonts/
 
 wget https://github.com/gorontaloku/debian/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
 #Setup Fancybash Termux
-#wget https://github.com/gorontaloku/debian/raw/main/fancybash.sh
-#mv fancybash.sh .fancybash.sh
-#echo "source $HOME/.fancybash.sh" >> $PREFIX/etc/bash.bashrc
-#sed -i "326s/\\\u/$username/" $HOME/.fancybash.sh
-#sed -i "327s/\\\h/termux/" $HOME/.fancybash.sh
+wget https://github.com/gorontaloku/debian/raw/main/fancybash.sh
+mv fancybash.sh .fancybash.sh
+echo "source $HOME/.fancybash.sh" >> $PREFIX/etc/bash.bashrc
+sed -i "326s/\\\u/$username/" $HOME/.fancybash.sh
+sed -i "327s/\\\h/termux/" $HOME/.fancybash.sh
 
 #Autostart Conky
 wget https://github.com/gorontaloku/debian/raw/main/config.tar.gz
