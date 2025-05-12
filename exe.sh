@@ -16,7 +16,7 @@ cp preferences-system-search.svg $PREFIX/share/icons/Papirus/64x64/apps/
 cp preferences-system-search.svg $PREFIX/share/icons/Papirus/16x16/apps/
 cp preferences-system-search.svg $PREFIX/share/icons/Papirus/22x22/apps/
 cp preferences-system-search.svg $PREFIX/share/icons/Papirus/24x24/apps/
-
+cd
 rm -rf $HOME//iconwin
 
 wget https://raw.githubusercontent.com/gorontaloku/debian/main/word-icon.png
