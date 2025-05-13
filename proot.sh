@@ -77,6 +77,9 @@ cat <<'EOF' > $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$usernam
 Xcursor.theme: dist-dark
 EOF
 
+wget https://github.com/gorontaloku/debian/raw/main/NotoColorEmoji-Regular.ttf
+mv NotoColorEmoji-Regular.ttf .fonts/
+
 mkdir $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fonts/
 cp .fonts/NotoColorEmoji-Regular.ttf $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fonts/ 
 
