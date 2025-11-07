@@ -94,7 +94,7 @@ echo "Downloading Termux-X11"
 # Unduh termux x11
 wget https://github.com/termux/termux-x11/releases/download/nightly/app-arm64-v8a-debug.apk
 mv app-arm64-v8a-debug.apk $HOME/storage/downloads/
-termux-open $HOME/storage/downloads/app-arm64-v8a-debug.apk
+#termux-open $HOME/storage/downloads/app-arm64-v8a-debug.apk
 
 source $PREFIX/etc/bash.bashrc
 termux-reload-settings
