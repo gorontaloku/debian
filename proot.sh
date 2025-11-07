@@ -59,9 +59,11 @@ pd login debian --shared-tmp -- env DISPLAY=:1.0 rm /etc/localtime
 pd login debian --shared-tmp -- env DISPLAY=:1.0 cp /usr/share/zoneinfo/$timezone /etc/localtime
 
 #Setup Fancybash Proot
-cp .fancybash.sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
+cp -r .fancybash.sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
 echo "source ~/.fancybash.sh" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
-sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fancybash.sh
+sed -i 's/old/new/g' ~/.fancybash.sh/fancybash.sh
+
+#sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fancybash.sh
 
 wget https://github.com/gorontaloku/debian/raw/main/conky.tar.gz
 tar -xvzf conky.tar.gz
