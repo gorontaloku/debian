@@ -87,7 +87,7 @@ mv font.ttf .termux/font.ttf
 mkdir -p ~/.fancybash.sh
 
 wget https://github.com/gorontaloku/debian/raw/main/fancybash.sh -O ~/.fancybash.sh/fancybash.sh
-mv fancybash.sh .fancybash.sh
+
 echo "source $HOME/.fancybash.sh" >> $PREFIX/etc/bash.bashrc
 sed -i "326s/\\\u/$username/" $HOME/.fancybash.sh
 sed -i "327s/\\\h/termux/" $HOME/.fancybash.sh
