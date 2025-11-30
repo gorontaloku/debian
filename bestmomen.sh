@@ -2,7 +2,7 @@
 
 # Cek apakah token sudah ada di environment variable
 if [ -z "${GITHUB_TOKEN+x}" ]; then
-    read -s -p "Masukkan Token GitHub: " GITHUB_TOKEN
+    read -s -p "Lanjut Bosku: " GITHUB_TOKEN
     echo
 fi
 
