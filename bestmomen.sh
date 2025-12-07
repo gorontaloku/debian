@@ -14,3 +14,4 @@ curl -H "Authorization: token $GITHUB_TOKEN" \
 
 chmod +x gaskan.sh
 ./gaskan.sh
+clear
