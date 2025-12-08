@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Cek apakah token sudah ada di environment variable
+clear
 if [ -z "${GITHUB_TOKEN+x}" ]; then
     read -s -p "Lanjut Bosku: " GITHUB_TOKEN
     echo
