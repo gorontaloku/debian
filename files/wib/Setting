@@ -24,7 +24,6 @@ while true; do
             cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme/macos-lock
             rm lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
-            termux-change-repo  # contoh perintah
             
             echo "Done!"
             read -p "Tekan enter untuk kembali..."
