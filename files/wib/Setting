@@ -31,6 +31,18 @@ while true; do
             ;;
         2)
             echo "Mengatur timezone ke WITA..."
+            cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme
+            rm Hermoso_Rc
+            rm conkyrc_time
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/Hermoso_Rc
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/conkyrc_time
+
+            cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme/macos-lock
+            rm lockscreen.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
+            
+            echo "Done!"
+
             # perintah lain
             echo "Done!"
             read -p "Tekan enter untuk kembali..."
