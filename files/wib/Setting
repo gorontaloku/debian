@@ -1,0 +1,53 @@
+#!/bin/bash
+
+while true; do
+    clear
+    echo "======================"
+    echo "      MENU TERMUX"
+    echo "======================"
+    echo "1) Set Timezone WIB"
+    echo "2) Set Timezone WITA"
+    echo "3) Set Timezone WIT"
+    echo "4) Keluar"
+    echo "======================"
+    read -p "Pilih menu: " pilih
+
+    case $pilih in
+        1)
+            echo "Mengatur timezone ke WIB..."
+            cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme
+            rm Hermoso_Rc
+            rm conkyrc_time
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/Hermoso_Rc
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/conkyrc_time
+
+            cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme/macos-lock
+            rm lockscreen.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
+            termux-change-repo  # contoh perintah
+            
+            echo "Done!"
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        2)
+            echo "Mengatur timezone ke WITA..."
+            # perintah lain
+            echo "Done!"
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        3)
+            echo "Mengatur timezone ke WIT..."
+            # perintah lain
+            echo "Done!"
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        4)
+            echo "Keluar."
+            exit
+            ;;
+        *)
+            echo "Pilihan tidak valid!"
+            sleep 1
+            ;;
+    esac
+done
