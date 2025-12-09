@@ -3,7 +3,7 @@
 while true; do
     clear
     echo "======================"
-    echo "      MENU TERMUX"
+    echo "      BESTMOMEN"
     echo "======================"
     echo "1) Set Timezone WIB"
     echo "2) Set Timezone WITA"
