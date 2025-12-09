@@ -49,5 +49,5 @@ color8 000080
 
 own_window_transparent yes
 TEXT
-${voffset -8}${offset 46}${font JosefinSans-Regular:pixelsize=80}${tztime Asia/Makassar %H:%M}${font JosefinSans-Regular:pixelsize=14}$font ${color9}${tztime Asia/Jakarta %d}$color ${time %B} ${time %Y}$font
+${voffset -8}${offset 46}${font JosefinSans-Regular:pixelsize=80}${tztime Asia/Makassar %H:%M}${font JosefinSans-Regular:pixelsize=14}$font ${color9}${tztime Asia/Makassar %d}$color ${time %B} ${time %Y}$font
 ${voffset -48}
