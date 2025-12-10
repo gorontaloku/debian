@@ -1,0 +1,41 @@
+#!/bin/bash
+
+cd
+
+proot-distro login debian --shared-tmp -- bash -c "cd; apt remove sudo -y; apt install sudo -y"
+
+proot-distro login debian --user user --shared-tmp -- bash -c "cd; ls -A; cd .local/share/mime/packages; ls; chmod 777 Override.xml;"
+
+proot-distro login debian --user user --shared-tmp -- bash -c "cd; ls -A; cd .local/share/mime; ls; chmod 777 packages;"
+
+cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/home/user
+
+ls -A
+
+cd .local/share/mime/
+ls
+chmod 777 packages
+cd packages
+ls
+chmod 777 Override.xml
+rm Override.xml
+
+wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/Override.xml
+
+cd
+
+clear
+
+echo " "  
+echo "Masukan password : 123456 lalu enter saja..."
+echo "( Password Tidak terlihat )"
+echo " "
+
+proot-distro login debian --user user --shared-tmp -- bash -c "cd; sudo update-mime-database -V ~/.local/share/mime/; ls -A; cd .local/share/mime/packages; ls; chmod 444 Override.xml;"
+
+proot-distro login debian --user user --shared-tmp -- bash -c "cd; ls -A; cd .local/share/mime; ls; chmod 444 packages;"
+
+clear
+
+echo -e "\033[0;32m=== SELESAI ==="
+echo ""
