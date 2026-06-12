@@ -4,7 +4,7 @@ DIR="$(dirname "$0")"
 
 feh --fullscreen --auto-zoom --hide-pointer "$DIR/logo6.png" &
 sleep 1
-feh --fullscreen --auto-zoom --hide-pointer "$DIRlogo7.png" &
+feh --fullscreen --auto-zoom --hide-pointer "$DIR/logo7.png" &
 sleep 1
 feh --fullscreen --auto-zoom --hide-pointer "$DIR/logo8.png" &
 sleep 2
