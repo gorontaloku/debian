@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ROOTFS="/data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs"
+
 while true; do
     clear
     echo "======================"
@@ -17,13 +19,13 @@ while true; do
     case $pilih in
         1)
             echo "Mengatur timezone ke WIB..."
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme
+            cd "$ROOTFS/usr/share/conky_theme"
             rm Hermoso_Rc
             rm conkyrc_time
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/conkyrc_time
 
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme/macos-lock
+            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
             
@@ -32,13 +34,13 @@ while true; do
             ;;
         2)
             echo "Mengatur timezone ke WITA..."
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme
+            cd "$ROOTFS/usr/share/conky_theme"
             rm Hermoso_Rc
             rm conkyrc_time
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/conkyrc_time
 
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme/macos-lock
+            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
             
@@ -47,13 +49,13 @@ while true; do
             ;;
         3)
             echo "Mengatur timezone ke WIT..."
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme
+            cd "$ROOTFS/usr/share/conky_theme"
             rm Hermoso_Rc
             rm conkyrc_time
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/conkyrc_time
 
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme/macos-lock
+            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
             
@@ -63,11 +65,11 @@ while true; do
             ;;
         4)
             echo "Mengaktikan Paket Macos Tahoe..."
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme/macos-lock
+            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm splash.sh
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/splash.sh
 
-            cd /data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme/macos-lock
+            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
@@ -76,7 +78,7 @@ while true; do
             read -p "Tekan enter untuk kembali..."
             ;;
         5)
-            LOCKFILE="/data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs/usr/share/conky_theme/macos-lock/lockscreen.py"
+            LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
 
             read -p "Masukkan username baru: " username
 
