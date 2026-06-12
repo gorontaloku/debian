@@ -8,7 +8,8 @@ while true; do
     echo "1) Set Timezone WIB"
     echo "2) Set Timezone WITA"
     echo "3) Set Timezone WIT"
-    echo "4) Keluar"
+    echo "4) Set OK"
+    echo "5) Keluar"
     echo "======================"
     read -p "Pilih menu: " pilih
 
@@ -60,6 +61,20 @@ while true; do
             read -p "Tekan enter untuk kembali..."
             ;;
         4)
+            echo "Mengaktikan Paket Macos Tahoe..."
+            cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme/macos-lock
+            rm splash.sh
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/splash.sh
+
+            cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme/macos-lock
+            rm lockscreen.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+            
+            echo "Done!"
+
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        5)
             echo "Keluar."
             exit
             ;;
