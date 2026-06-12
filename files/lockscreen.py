@@ -8,6 +8,7 @@ import datetime
 CORRECT_PASSWORD = "1234"  # Ganti password
 password_visible = False
 #===========================================================================================================================================================================================================
+USERNAME = "Bestmomen"
 # === PATHS ===
 BASE = os.path.dirname(os.path.abspath(__file__)) + "/"
 WALLPAPER = BASE + "background.jpg" #Ganti Walpaper disini ==================================================================================================================================================
@@ -68,7 +69,7 @@ canvas.create_image(screen_w/2, screen_h * 0.82, image=avatar_img)
 # === USERNAME ========================================================================================================================================================================================
 canvas.create_text(
     screen_w/2, screen_h * 0.88,
-    text="Bestmomen",
+    text=USERNAME,
     font=("Anurati", 20, "bold"),
     fill="white"
 )
