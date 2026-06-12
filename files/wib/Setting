@@ -9,7 +9,8 @@ while true; do
     echo "2) Set Timezone WITA"
     echo "3) Set Timezone WIT"
     echo "4) Set OK"
-    echo "5) Keluar"
+    echo "5) Ganti Username"
+    echo "6) Keluar"
     echo "======================"
     read -p "Pilih menu: " pilih
 
@@ -75,6 +76,16 @@ while true; do
             read -p "Tekan enter untuk kembali..."
             ;;
         5)
+            LOCKFILE="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/usr/share/conky_theme/macos-lock/lockscreen.py"
+
+            read -p "Masukkan username baru: " username
+
+            sed -i 's/^USERNAME = .*/USERNAME = "'"$username"'"/' "$LOCKFILE"
+
+            echo "Username berhasil diubah menjadi $username"
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        6)
             echo "Keluar."
             exit
             ;;
