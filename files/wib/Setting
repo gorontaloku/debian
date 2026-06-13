@@ -27,7 +27,7 @@ while true; do
 
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
-            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
             read -p "Tekan enter untuk kembali..."
@@ -42,7 +42,7 @@ while true; do
 
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
-            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
             read -p "Tekan enter untuk kembali..."
@@ -57,7 +57,7 @@ while true; do
 
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
-            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/lockscreen.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
 
@@ -72,6 +72,12 @@ while true; do
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+
+            cd "$ROOTFS/usr/share/applications"
+            rm about.desktop
+            rm xfce4-run (copy 1) (copy 1) (copy 1).desktop
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/about.desktop
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/xfce4-run (copy 1) (copy 1) (copy 1).desktop
             
             echo "Done!"
 
