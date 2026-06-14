@@ -13,7 +13,9 @@ while true; do
     echo "4) Set OK"
     echo "5) Ganti Username"
     echo "6) Ganti Jenis Tablet"
-    echo "7) Keluar"
+    echo "7) Ganti Password"
+    echo "8) Reset Password ke Default"
+    echo "9) Keluar"
     echo "======================"
     read -p "Pilih menu: " pilih
 
@@ -362,8 +364,53 @@ while true; do
                 break
             done
             ;;
-
         7)
+            LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
+            
+            CURRENT_PASS=$(grep '^CORRECT_PASSWORD' "$LOCKFILE" | awk -F'"' '{print $2}')
+            
+            read -s -p "Masukkan password lama: " oldpass
+            echo
+            
+            if [ "$oldpass" != "$CURRENT_PASS" ]; then
+                echo "Password lama salah!"
+                read -p "Tekan enter..."
+                continue
+            fi
+            
+            read -s -p "Password baru: " newpass
+            echo
+            
+            read -s -p "Ulangi password baru: " confpass
+            echo
+            
+            if [ "$newpass" != "$confpass" ]; then
+                echo "Konfirmasi password tidak cocok!"
+                read -p "Tekan enter..."
+                continue
+            fi
+            
+            sed -i "s/^CORRECT_PASSWORD = .*/CORRECT_PASSWORD = \"$newpass\"  # Ganti password/" "$LOCKFILE"
+            
+            echo "Password berhasil diubah."
+            read -p "Tekan Enter untuk kembali..."
+            ;;
+        8)
+            LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
+        
+            sed -i \
+            's/^CORRECT_PASSWORD = .*/CORRECT_PASSWORD = "1234"  # Ganti password/' \
+            "$LOCKFILE"
+        
+            echo
+            echo "Password berhasil direset."
+            echo "Password default: 1234"
+            echo
+        
+            read -p "Tekan enter untuk kembali..."
+            ;;
+
+        9)
             echo "Keluar."
             exit
             ;;
