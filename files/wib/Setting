@@ -20,13 +20,13 @@ while true; do
         1)
             echo "Mengatur timezone ke WIB..."
             cd "$ROOTFS/usr/share/conky_theme"
-            rm Hermoso_Rc
-            rm conkyrc_time
+            rm -f Hermoso_Rc
+            rm -f conkyrc_time
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/conkyrc_time
 
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm lockscreen.py
+            rm -f lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
@@ -35,13 +35,13 @@ while true; do
         2)
             echo "Mengatur timezone ke WITA..."
             cd "$ROOTFS/usr/share/conky_theme"
-            rm Hermoso_Rc
-            rm conkyrc_time
+            rm -f Hermoso_Rc
+            rm -f conkyrc_time
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/conkyrc_time
 
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm lockscreen.py
+            rm -f lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
@@ -50,13 +50,13 @@ while true; do
         3)
             echo "Mengatur timezone ke WIT..."
             cd "$ROOTFS/usr/share/conky_theme"
-            rm Hermoso_Rc
-            rm conkyrc_time
+            rm -f Hermoso_Rc
+            rm -f conkyrc_time
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/conkyrc_time
 
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm lockscreen.py
+            rm -f lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
@@ -66,19 +66,30 @@ while true; do
         4)
             echo "Mengaktikan Paket Macos Tahoe..."
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm splash.sh
+            rm -f splash.sh
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/splash.sh
 
-            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm lockscreen.py
+            rm -f lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
 
             cd "$ROOTFS/usr/share/applications"
-            rm about.desktop
-            rm xfce4-run (copy 1) (copy 1) (copy 1).desktop
+            rm -f about.desktop
+            rm -f "xfce4-run (copy 1) (copy 1) (copy 1).desktop"
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/about.desktop
-            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/xfce4-run (copy 1) (copy 1) (copy 1).desktop
+            wget "https://raw.githubusercontent.com/gorontaloku/debian/main/files/xfce4-run%20(copy%201)%20(copy%201)%20(copy%201).desktop"
+
+            echo "Memperbaiki konfigurasi lama..."
+
+            find "$ROOTFS/home/user/.config" -type f | while read file
+            do
+                if grep -q "installed-rootfs/debian" "$file"; then
+                    echo "Memperbaiki: $file"
             
+                    sed -i \
+                    's|/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian|/data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs|g' \
+                    "$file"
+                fi
+            done
             echo "Done!"
 
             read -p "Tekan enter untuk kembali..."
@@ -87,10 +98,13 @@ while true; do
             LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
 
             read -p "Masukkan username baru: " username
+            
+            sed -i "s/^USERNAME = .*/USERNAME = \"$username\"/" "$LOCKFILE"
+            
+            echo ""
+            echo "Username berhasil diubah menjadi:"
+            grep "^USERNAME" "$LOCKFILE"
 
-            sed -i 's/^USERNAME = .*/USERNAME = "'"$username"'"/' "$LOCKFILE"
-
-            echo "Username berhasil diubah menjadi $username"
             read -p "Tekan enter untuk kembali..."
             ;;
         6)
