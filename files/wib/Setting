@@ -71,6 +71,7 @@ while true; do
             cd "$ROOTFS/usr/share/conky_theme/macos-lock"
             rm -f splash.sh
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/splash.sh
+            chmod +x splash.sh
 
             rm -f lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
