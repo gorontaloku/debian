@@ -100,6 +100,13 @@ while true; do
         5)
             LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
 
+            if ! grep -q '^USERNAME =' "$LOCKFILE"; then
+                echo "Lockscreen versi lama terdeteksi!"
+                echo "Jalankan menu 4 terlebih dahulu."
+                read -p "Tekan Enter..."
+                continue
+            fi
+
             read -p "Masukkan username baru: " username
             
             sed -i "s/^USERNAME = .*/USERNAME = \"$username\"/" "$LOCKFILE"
@@ -366,6 +373,13 @@ while true; do
             ;;
         7)
             LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
+
+            if ! grep -q '^CORRECT_PASSWORD =' "$LOCKFILE"; then
+                echo "Lockscreen versi lama terdeteksi!"
+                echo "Jalankan menu 4 terlebih dahulu."
+                read -p "Tekan Enter..."
+                continue
+            fi
             
             CURRENT_PASS=$(grep '^CORRECT_PASSWORD' "$LOCKFILE" | awk -F'"' '{print $2}')
             
