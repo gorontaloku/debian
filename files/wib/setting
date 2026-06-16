@@ -84,7 +84,7 @@ while true; do
 
             cd "$ROOTFS/usr/share/applications"
             rm -f about.desktop
-            rm -f "xfce4-run (copy 1) (copy 1) (copy 1).desktop"
+            #rm -f "xfce4-run (copy 1) (copy 1) (copy 1).desktop"
             cd
             cd "$ROOTFS/usr/share/applications"
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/about.desktop
