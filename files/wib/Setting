@@ -28,9 +28,9 @@ while true; do
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/conkyrc_time
 
-            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm -f lockscreen.py
-            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+            #cd "$ROOTFS/usr/share/conky_theme/macos-lock"
+            #rm -f lockscreen.py
+            #wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
             read -p "Tekan enter untuk kembali..."
@@ -43,9 +43,9 @@ while true; do
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/conkyrc_time
 
-            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm -f lockscreen.py
-            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+           # cd "$ROOTFS/usr/share/conky_theme/macos-lock"
+           # rm -f lockscreen.py
+            #wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
             read -p "Tekan enter untuk kembali..."
@@ -58,9 +58,9 @@ while true; do
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/conkyrc_time
 
-            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
-            rm -f lockscreen.py
-            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+           #cd "$ROOTFS/usr/share/conky_theme/macos-lock"
+            #rm -f lockscreen.py
+            #wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
             
             echo "Done!"
 
