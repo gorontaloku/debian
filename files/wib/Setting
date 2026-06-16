@@ -25,6 +25,8 @@ while true; do
             cd "$ROOTFS/usr/share/conky_theme"
             rm -f Hermoso_Rc
             rm -f conkyrc_time
+            cd
+            cd "$ROOTFS/usr/share/conky_theme
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/conkyrc_time
 
@@ -40,6 +42,8 @@ while true; do
             cd "$ROOTFS/usr/share/conky_theme"
             rm -f Hermoso_Rc
             rm -f conkyrc_time
+            cd
+            cd "$ROOTFS/usr/share/conky_theme
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/conkyrc_time
 
@@ -55,6 +59,8 @@ while true; do
             cd "$ROOTFS/usr/share/conky_theme"
             rm -f Hermoso_Rc
             rm -f conkyrc_time
+            cd
+            cd "$ROOTFS/usr/share/conky_theme
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/conkyrc_time
 
@@ -79,12 +85,14 @@ while true; do
             cd "$ROOTFS/usr/share/applications"
             rm -f about.desktop
             rm -f "xfce4-run (copy 1) (copy 1) (copy 1).desktop"
+            cd
+            cd "$ROOTFS/usr/share/applications"
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/about.desktop
             wget "https://raw.githubusercontent.com/gorontaloku/debian/main/files/xfce4-run%20(copy%201)%20(copy%201)%20(copy%201).desktop"
 
             echo "Memperbaiki konfigurasi lama..."
 
-            find "$ROOTFS/home/user/.config" -type f | while read file
+            find "/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian|/data/data/com.termux/files/home/user/.config" -type f | while read file
             do
                 if grep -q "installed-rootfs/debian" "$file"; then
                     echo "Memperbaiki: $file"
