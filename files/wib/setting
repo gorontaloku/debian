@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOTFS="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/"
+ROOTFS="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian/"
 
 while true; do
     clear
