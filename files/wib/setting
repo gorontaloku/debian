@@ -1,0 +1,445 @@
+#!/bin/bash
+
+ROOTFS="/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/"
+
+while true; do
+    clear
+    echo "======================"
+    echo "      BESTMOMEN"
+    echo "======================"
+    echo "1) Set Timezone WIB"
+    echo "2) Set Timezone WITA"
+    echo "3) Set Timezone WIT"
+    echo "4) Set OK"
+    echo "5) Ganti Username"
+    echo "6) Ganti Jenis Tablet"
+    echo "7) Ganti Password"
+    echo "8) Reset Password ke Default"
+    echo "9) Keluar"
+    echo "======================"
+    read -p "Pilih menu: " pilih
+
+    case $pilih in
+        1)
+            echo "Mengatur timezone ke WIB..."
+            cd "$ROOTFS/usr/share/conky_theme"
+            rm -f Hermoso_Rc
+            rm -f conkyrc_time
+            cd
+            cd "$ROOTFS/usr/share/conky_theme
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/Hermoso_Rc
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/conkyrc_time
+
+            #cd "$ROOTFS/usr/share/conky_theme/macos-lock"
+            #rm -f lockscreen.py
+            #wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+            
+            echo "Done!"
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        2)
+            echo "Mengatur timezone ke WITA..."
+            cd "$ROOTFS/usr/share/conky_theme"
+            rm -f Hermoso_Rc
+            rm -f conkyrc_time
+            cd
+            cd "$ROOTFS/usr/share/conky_theme
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/Hermoso_Rc
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/conkyrc_time
+
+           # cd "$ROOTFS/usr/share/conky_theme/macos-lock"
+           # rm -f lockscreen.py
+            #wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+            
+            echo "Done!"
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        3)
+            echo "Mengatur timezone ke WIT..."
+            cd "$ROOTFS/usr/share/conky_theme"
+            rm -f Hermoso_Rc
+            rm -f conkyrc_time
+            cd
+            cd "$ROOTFS/usr/share/conky_theme
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/Hermoso_Rc
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/conkyrc_time
+
+           #cd "$ROOTFS/usr/share/conky_theme/macos-lock"
+            #rm -f lockscreen.py
+            #wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+            
+            echo "Done!"
+
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        4)
+            echo "Mengaktikan Paket Macos Tahoe..."
+            cd "$ROOTFS/usr/share/conky_theme/macos-lock"
+            rm -f splash.sh
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/splash.sh
+            chmod +x splash.sh
+
+            rm -f lockscreen.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
+
+            cd "$ROOTFS/usr/share/applications"
+            rm -f about.desktop
+            rm -f "xfce4-run (copy 1) (copy 1) (copy 1).desktop"
+            cd
+            cd "$ROOTFS/usr/share/applications"
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/about.desktop
+            wget "https://raw.githubusercontent.com/gorontaloku/debian/main/files/xfce4-run%20(copy%201)%20(copy%201)%20(copy%201).desktop"
+
+            #echo "Memperbaiki konfigurasi lama..."
+
+            #find "/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian|/data/data/com.termux/files/home/user/.config" -type f | while read file
+            #do
+            #    if grep -q "installed-rootfs/debian" "$file"; then
+            #        echo "Memperbaiki: $file"
+            
+            #        sed -i \
+            #        's|/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian|/data/data/com.termux/files/usr/var/lib/proot-distro/containers/debian/rootfs|g' \
+             #       "$file"
+             #   fi
+            done
+            echo "Done!"
+
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        5)
+            LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
+
+            if ! grep -q '^USERNAME =' "$LOCKFILE"; then
+                echo "Lockscreen versi lama terdeteksi!"
+                echo "Jalankan menu 4 terlebih dahulu."
+                read -p "Tekan Enter..."
+                continue
+            fi
+
+            read -p "Masukkan username baru: " username
+            
+            sed -i "s/^USERNAME = .*/USERNAME = \"$username\"/" "$LOCKFILE"
+            
+            echo ""
+            echo "Username berhasil diubah menjadi:"
+            grep "^USERNAME" "$LOCKFILE"
+
+            read -p "Tekan enter untuk kembali..."
+            ;;
+        6)
+            ABOUTFILE="$ROOTFS/usr/share/conky_theme/macos-lock/about.py"
+        
+            while true; do
+                clear
+                echo "======================"
+                echo "    PILIH MEREK"
+                echo "======================"
+                echo "1) Xiaomi"
+                echo "2) Redmi"
+                echo "3) Samsung"
+                echo "4) Lenovo"
+                echo "5) OnePlus"
+                echo "6) OPPO"
+                echo "7) Vivo"
+                echo "8) Huawei"
+                echo "9) Honor"
+                echo "10) Google"
+                echo "11) Custom"
+                echo "12) Kembali"
+                echo "======================"
+        
+                read -p "Pilih merek: " brand
+        
+                case $brand in
+        
+                # ================= XIAOMI =================
+                1)
+                    clear
+                    echo "===== XIAOMI ====="
+                    echo "1) Xiaomi Pad 6"
+                    echo "2) Xiaomi Pad 6 Pro"
+                    echo "3) Xiaomi Pad 6S Pro"
+                    echo "4) Xiaomi Pad 7"
+                    echo "5) Xiaomi Pad 7 Pro"
+                    echo "6) Xiaomi Pad 7 Ultra"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="Xiaomi Pad 6" ;;
+                        2) tablet="Xiaomi Pad 6 Pro" ;;
+                        3) tablet="Xiaomi Pad 6S Pro" ;;
+                        4) tablet="Xiaomi Pad 7" ;;
+                        5) tablet="Xiaomi Pad 7 Pro" ;;
+                        6) tablet="Xiaomi Pad 7 Ultra" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= REDMI =================
+                2)
+                    clear
+                    echo "===== REDMI ====="
+                    echo "1) Redmi Pad"
+                    echo "2) Redmi Pad SE"
+                    echo "3) Redmi Pad SE 8.7"
+                    echo "4) Redmi Pad Pro"
+                    echo "5) Redmi Pad 2"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="Redmi Pad" ;;
+                        2) tablet="Redmi Pad SE" ;;
+                        3) tablet="Redmi Pad SE 8.7" ;;
+                        4) tablet="Redmi Pad Pro" ;;
+                        5) tablet="Redmi Pad 2" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= SAMSUNG =================
+                3)
+                    clear
+                    echo "===== SAMSUNG ====="
+                    echo "1) Galaxy Tab A9"
+                    echo "2) Galaxy Tab A9+"
+                    echo "3) Galaxy Tab S9 FE"
+                    echo "4) Galaxy Tab S9 FE+"
+                    echo "5) Galaxy Tab S10 FE"
+                    echo "6) Galaxy Tab S10 FE+"
+                    echo "7) Galaxy Tab S10+"
+                    echo "8) Galaxy Tab S10 Ultra"
+                    echo "9) Galaxy Tab S11"
+                    echo "10) Galaxy Tab S11 Ultra"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="Samsung Galaxy Tab A9" ;;
+                        2) tablet="Samsung Galaxy Tab A9+" ;;
+                        3) tablet="Samsung Galaxy Tab S9 FE" ;;
+                        4) tablet="Samsung Galaxy Tab S9 FE+" ;;
+                        5) tablet="Samsung Galaxy Tab S10 FE" ;;
+                        6) tablet="Samsung Galaxy Tab S10 FE+" ;;
+                        7) tablet="Samsung Galaxy Tab S10+" ;;
+                        8) tablet="Samsung Galaxy Tab S10 Ultra" ;;
+                        9) tablet="Samsung Galaxy Tab S11" ;;
+                        10) tablet="Samsung Galaxy Tab S11 Ultra" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= LENOVO =================
+                4)
+                    clear
+                    echo "===== LENOVO ====="
+                    echo "1) Lenovo Tab M9"
+                    echo "2) Lenovo Tab M11"
+                    echo "3) Lenovo Tab Plus"
+                    echo "4) Lenovo Tab P12"
+                    echo "5) Lenovo Idea Tab Pro"
+                    echo "6) Lenovo Xiaoxin Pad Pro"
+                    echo "7) Lenovo Legion Tab"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="Lenovo Tab M9" ;;
+                        2) tablet="Lenovo Tab M11" ;;
+                        3) tablet="Lenovo Tab Plus" ;;
+                        4) tablet="Lenovo Tab P12" ;;
+                        5) tablet="Lenovo Idea Tab Pro" ;;
+                        6) tablet="Lenovo Xiaoxin Pad Pro" ;;
+                        7) tablet="Lenovo Legion Tab" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= ONEPLUS =================
+                5)
+                    clear
+                    echo "===== ONEPLUS ====="
+                    echo "1) OnePlus Pad"
+                    echo "2) OnePlus Pad 2"
+                    echo "3) OnePlus Pad 3"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="OnePlus Pad" ;;
+                        2) tablet="OnePlus Pad 2" ;;
+                        3) tablet="OnePlus Pad 3" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= OPPO =================
+                6)
+                    clear
+                    echo "===== OPPO ====="
+                    echo "1) OPPO Pad Air"
+                    echo "2) OPPO Pad 2"
+                    echo "3) OPPO Pad 3"
+                    echo "4) OPPO Pad 4 Pro"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="OPPO Pad Air" ;;
+                        2) tablet="OPPO Pad 2" ;;
+                        3) tablet="OPPO Pad 3" ;;
+                        4) tablet="OPPO Pad 4 Pro" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= VIVO =================
+                7)
+                    clear
+                    echo "===== VIVO ====="
+                    echo "1) Vivo Pad"
+                    echo "2) Vivo Pad 2"
+                    echo "3) Vivo Pad 3"
+                    echo "4) Vivo Pad 5 Pro"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="Vivo Pad" ;;
+                        2) tablet="Vivo Pad 2" ;;
+                        3) tablet="Vivo Pad 3" ;;
+                        4) tablet="Vivo Pad 5 Pro" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= HUAWEI =================
+                8)
+                    clear
+                    echo "===== HUAWEI ====="
+                    echo "1) MatePad 11.5"
+                    echo "2) MatePad Air"
+                    echo "3) MatePad Pro 13.2"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="Huawei MatePad 11.5" ;;
+                        2) tablet="Huawei MatePad Air" ;;
+                        3) tablet="Huawei MatePad Pro 13.2" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= HONOR =================
+                9)
+                    clear
+                    echo "===== HONOR ====="
+                    echo "1) Honor Pad 9"
+                    echo "2) Honor MagicPad 2"
+                    echo "3) Honor MagicPad 4"
+        
+                    read -p "Pilih: " p
+        
+                    case $p in
+                        1) tablet="Honor Pad 9" ;;
+                        2) tablet="Honor MagicPad 2" ;;
+                        3) tablet="Honor MagicPad 4" ;;
+                        *) continue ;;
+                    esac
+                    ;;
+        
+                # ================= GOOGLE =================
+                10)
+                    tablet="Google Pixel Tablet"
+                    ;;
+        
+                # ================= CUSTOM =================
+                11)
+                    read -p "Masukkan nama tablet: " tablet
+                    ;;
+        
+                12)
+                    break
+                    ;;
+        
+                *)
+                    continue
+                    ;;
+                esac
+        
+                sed -i "s/^CUSTOM_DEVICE_NAME = .*/CUSTOM_DEVICE_NAME = \"$tablet\"/" "$ABOUTFILE"
+        
+                echo
+                echo "Berhasil diubah menjadi:"
+                echo "$tablet"
+                echo
+        
+                read -p "Tekan Enter untuk kembali..."
+                break
+            done
+            ;;
+        7)
+            LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
+
+            if ! grep -q '^CORRECT_PASSWORD =' "$LOCKFILE"; then
+                echo "Lockscreen versi lama terdeteksi!"
+                echo "Jalankan menu 4 terlebih dahulu."
+                read -p "Tekan Enter..."
+                continue
+            fi
+            
+            CURRENT_PASS=$(grep '^CORRECT_PASSWORD' "$LOCKFILE" | awk -F'"' '{print $2}')
+            
+            read -s -p "Masukkan password lama: " oldpass
+            echo
+            
+            if [ "$oldpass" != "$CURRENT_PASS" ]; then
+                echo "Password lama salah!"
+                read -p "Tekan enter..."
+                continue
+            fi
+            
+            read -s -p "Password baru: " newpass
+            echo
+            
+            read -s -p "Ulangi password baru: " confpass
+            echo
+            
+            if [ "$newpass" != "$confpass" ]; then
+                echo "Konfirmasi password tidak cocok!"
+                read -p "Tekan enter..."
+                continue
+            fi
+            
+            sed -i "s/^CORRECT_PASSWORD = .*/CORRECT_PASSWORD = \"$newpass\"  # Ganti password/" "$LOCKFILE"
+            
+            echo "Password berhasil diubah."
+            read -p "Tekan Enter untuk kembali..."
+            ;;
+        8)
+            LOCKFILE="$ROOTFS/usr/share/conky_theme/macos-lock/lockscreen.py"
+        
+            sed -i \
+            's/^CORRECT_PASSWORD = .*/CORRECT_PASSWORD = "1234"  # Ganti password/' \
+            "$LOCKFILE"
+        
+            echo
+            echo "Password berhasil direset."
+            echo "Password default: 1234"
+            echo
+        
+            read -p "Tekan enter untuk kembali..."
+            ;;
+
+        9)
+            echo "Keluar."
+            exit
+            ;;
+        *)
+            echo "Pilihan tidak valid!"
+            sleep 1
+            ;;
+    esac
+done
