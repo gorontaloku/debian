@@ -26,7 +26,7 @@ while true; do
             rm -f Hermoso_Rc
             rm -f conkyrc_time
             cd
-            cd "$ROOTFS/usr/share/conky_theme
+            cd "$ROOTFS/usr/share/conky_theme"
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wib/conkyrc_time
 
@@ -43,7 +43,7 @@ while true; do
             rm -f Hermoso_Rc
             rm -f conkyrc_time
             cd
-            cd "$ROOTFS/usr/share/conky_theme
+            cd "$ROOTFS/usr/share/conky_theme"
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wita/conkyrc_time
 
@@ -60,7 +60,7 @@ while true; do
             rm -f Hermoso_Rc
             rm -f conkyrc_time
             cd
-            cd "$ROOTFS/usr/share/conky_theme
+            cd "$ROOTFS/usr/share/conky_theme"
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/Hermoso_Rc
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/wit/conkyrc_time
 
@@ -92,7 +92,7 @@ while true; do
 
             echo "Memperbaiki konfigurasi lama..."
 
-            find "/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/debian|/data/data/com.termux/files/home/user/.config" -type f | while read file
+            find "$ROOTFS/home/user/.config" -type f | while read file
             do
                 if grep -q "installed-rootfs/debian" "$file"; then
                     echo "Memperbaiki: $file"
