@@ -82,6 +82,9 @@ while true; do
             rm -f lockscreen.py
             wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/lockscreen.py
 
+            rm -f about.py
+            wget https://raw.githubusercontent.com/gorontaloku/debian/main/files/about.py
+
             cd "$ROOTFS/usr/share/applications"
             rm -f about.desktop
             rm -f "xfce4-run (copy 1) (copy 1) (copy 1).desktop"
