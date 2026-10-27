@@ -105,6 +105,36 @@ while true; do
                     "$file"
                 fi
             done
+echo "Mengganti wallpaper macOS Tahoe..."
+
+            WALLPAPER_SRC="$ROOTFS/usr/share/conky_theme/macos-lock/background.jpg"
+            WALLPAPER_DIR="$ROOTFS/home/user/.local/share/backgrounds"
+            WALLPAPER_ACTIVE="$WALLPAPER_DIR/Monterey.jpg"
+            WALLPAPER_BACKUP="$WALLPAPER_DIR/Monterey.jpg.backup"
+
+            if [ -f "$WALLPAPER_SRC" ]; then
+                mkdir -p "$WALLPAPER_DIR"
+
+                # Cadangkan wallpaper lama, cukup sekali
+                if [ -f "$WALLPAPER_ACTIVE" ] &&
+                   [ ! -f "$WALLPAPER_BACKUP" ]; then
+                    mv "$WALLPAPER_ACTIVE" "$WALLPAPER_BACKUP"
+                fi
+
+                # Ganti file wallpaper dengan background.jpg
+                if [ -f "$WALLPAPER_BACKUP" ]; then
+                    cp -f "$WALLPAPER_SRC" "$WALLPAPER_ACTIVE"
+                    chown user:user "$WALLPAPER_ACTIVE" 2>/dev/null
+
+                    echo "Wallpaper berhasil diganti."
+                    echo "Lokasi aktif: $WALLPAPER_ACTIVE"
+                else
+                    echo "Wallpaper lama tidak ditemukan."
+                    echo "Periksa konfigurasi sebelum melanjutkan."
+                fi
+            else
+                echo "File sumber tidak ditemukan: $WALLPAPER_SRC"
+            fi
             echo "Done!"
 
             read -p "Tekan enter untuk kembali..."
