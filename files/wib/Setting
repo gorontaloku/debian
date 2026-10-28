@@ -15,7 +15,8 @@ while true; do
     echo "6) Ganti Jenis Tablet"
     echo "7) Ganti Password"
     echo "8) Reset Password ke Default"
-    echo "9) Keluar"
+    echo "9) Install Aplikasi"
+    echo "10) Keluar"
     echo "======================"
     read -p "Pilih menu: " pilih
 
@@ -467,6 +468,202 @@ echo "Mengganti wallpaper macOS Tahoe..."
             ;;
 
         9)
+            # =====================================
+            # INSTALL APLIKASI + DESKTOP + PLANK
+            # =====================================
+
+            DESKTOP="$ROOTFS/home/user/Desktop"
+            PLANK="$ROOTFS/home/user/.config/plank/dock1/launchers"
+
+            mkdir -p "$DESKTOP" "$PLANK"
+
+            install_app() {
+                local nama="$1"
+                local paket="$2"
+                local exec_cmd="$3"
+                local ikon="$4"
+                local id="$5"
+
+                local desktop_host="$DESKTOP/${id}.desktop"
+                local dock_host="$PLANK/${id}.dockitem"
+
+                echo
+                echo "================================"
+                echo "Memasang: $nama"
+                echo "================================"
+
+                if ! proot-distro login debian -- \
+                    apt-get install -y "$paket"; then
+                    echo "GAGAL memasang $nama."
+                    return 1
+                fi
+
+                # Membuat shortcut desktop
+                cat > "$desktop_host" <<EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=$nama
+Comment=Aplikasi $nama
+Exec=$exec_cmd
+Icon=$ikon
+Terminal=false
+Categories=Office;
+EOF
+
+                chmod 644 "$desktop_host"
+
+                # Mengatur pemilik shortcut desktop
+                proot-distro login debian -- \
+                    chown user:user "/home/user/Desktop/${id}.desktop" \
+                    || echo "Peringatan: gagal mengatur pemilik desktop."
+
+                # Membuat launcher Plank
+                cat > "$dock_host" <<EOF
+[PlankDockItemPreferences]
+Launcher=file:///home/user/Desktop/${id}.desktop
+EOF
+
+                chmod 644 "$dock_host"
+
+                proot-distro login debian -- \
+                    chown user:user "/home/user/.config/plank/dock1/launchers/${id}.dockitem" \
+                    || echo "Peringatan: gagal mengatur pemilik launcher."
+
+                echo
+                echo "Berhasil: $nama"
+                echo "Shortcut desktop dibuat."
+                echo "Launcher Plank dibuat."
+            }
+
+            while true; do
+                clear
+                echo "================================"
+                echo "       INSTALL APLIKASI"
+                echo "================================"
+                echo "1) LibreOffice Writer"
+                echo "2) LibreOffice Calc"
+                echo "3) LibreOffice Impress"
+                echo "4) Chromium Browser"
+                echo "5) VLC Media Player"
+                echo "6) GIMP Image Editor"
+                echo "7) Mousepad Text Editor"
+                echo "8) Evince PDF Reader"
+                echo "9) Install Semua Aplikasi"
+                echo "0) Kembali ke Menu Utama"
+                echo "================================"
+
+                read -p "Pilih aplikasi: " app
+
+                case "$app" in
+                    1)
+                        install_app \
+                            "LibreOffice Writer" \
+                            libreoffice-writer \
+                            "libreoffice --writer" \
+                            libreoffice-writer writer
+                        ;;
+                    2)
+                        install_app \
+                            "LibreOffice Calc" \
+                            libreoffice-calc \
+                            "libreoffice --calc" \
+                            libreoffice-calc calc
+                        ;;
+                    3)
+                        install_app \
+                            "LibreOffice Impress" \
+                            libreoffice-impress \
+                            "libreoffice --impress" \
+                            libreoffice-impress impress
+                        ;;
+                    4)
+                        # Chromium wajib menggunakan --no-sandbox
+                        install_app \
+                            "Chromium Browser" \
+                            chromium \
+                            "chromium --no-sandbox" \
+                            chromium chromium
+                        ;;
+                    5)
+                        install_app \
+                            "VLC Media Player" \
+                            vlc vlc vlc vlc
+                        ;;
+                    6)
+                        install_app \
+                            "GIMP Image Editor" \
+                            gimp gimp gimp gimp
+                        ;;
+                    7)
+                        install_app \
+                            "Mousepad Text Editor" \
+                            mousepad mousepad mousepad mousepad
+                        ;;
+                    8)
+                        install_app \
+                            "Evince PDF Reader" \
+                            evince evince evince evince
+                        ;;
+                    9)
+                        echo
+                        echo "Memperbarui daftar paket Debian..."
+
+                        if proot-distro login debian -- apt-get update; then
+                            install_app "LibreOffice Writer" \
+                                libreoffice-writer \
+                                "libreoffice --writer" \
+                                libreoffice-writer writer
+
+                            install_app "LibreOffice Calc" \
+                                libreoffice-calc \
+                                "libreoffice --calc" \
+                                libreoffice-calc calc
+
+                            install_app "LibreOffice Impress" \
+                                libreoffice-impress \
+                                "libreoffice --impress" \
+                                libreoffice-impress impress
+
+                            # Tetap menggunakan --no-sandbox
+                            install_app "Chromium Browser" \
+                                chromium \
+                                "chromium --no-sandbox" \
+                                chromium chromium
+
+                            install_app "VLC Media Player" \
+                                vlc vlc vlc vlc
+
+                            install_app "GIMP Image Editor" \
+                                gimp gimp gimp gimp
+
+                            install_app "Mousepad Text Editor" \
+                                mousepad mousepad mousepad mousepad
+
+                            install_app "Evince PDF Reader" \
+                                evince evince evince evince
+
+                            echo
+                            echo "Proses instalasi selesai."
+                        else
+                            echo "Gagal memperbarui daftar paket."
+                        fi
+                        ;;
+                    0)
+                        break
+                        ;;
+                    *)
+                        echo "Pilihan tidak valid!"
+                        sleep 1
+                        continue
+                        ;;
+                esac
+
+                echo
+                read -p "Tekan Enter untuk kembali ke submenu..."
+            done
+            ;;
+        10)
             echo "Keluar."
             exit
             ;;
