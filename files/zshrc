@@ -38,7 +38,7 @@ clear
     case "$pilihan" in
         1)
             echo "Memasuki Linux..."
-            start  # ganti dengan perintah masuk Linux kamu
+            bash -x "$PREFIX/bin/start"  # ganti dengan perintah masuk Linux kamu
             ;;
         2)
             clear
